@@ -1,4 +1,4 @@
-<!--- Generated at 2017-03-16T10:34:01.621.  Don't edit --->
+<!--- Generated at 2017-03-16T10:40:02.397.  Don't edit --->
 
 # APIGenerator API
 
@@ -8,14 +8,7 @@
 
 [![Build Status](https://travis-ci.org/joshday/APIGenerator.jl.svg?branch=master)](https://travis-ci.org/joshday/APIGenerator.jl)
 
-# Usage
-
-```julia
-import APIGenerator
-APIGenerator.make_api("MyPackage", "path/to/dest.md")
-```
-
-# Example
+### Example
 
 ```julia
 import APIGenerator
