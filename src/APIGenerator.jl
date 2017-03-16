@@ -3,14 +3,15 @@ module APIGenerator
 export make_api
 
 """
-    make_api(pkg, dest; title = "\$pkg API", readme=false, clobber=true)
+    make_api(pkg, dest; title = "\$pkg API", readme=true, clobber=true, toc=true)
 
 Write a markdown file (`dest`) which includes the docstring of every exported name from `pkg`.
 
 - `clobber = true` will overwrite `dest`
 - `readme = true` will include the `pkg`'s readme as the first item
+- `toc = true` adds a table of contents with section links
 """
-function make_api(pkg::String, dest::String; title="$pkg API", readme=false, clobber=true,
+function make_api(pkg::String, dest::String; title="$pkg API", readme=true, clobber=true,
                   toc=true)
     if dest[end-2:end] != ".md"
         dest *= ".md"
