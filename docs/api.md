@@ -1,13 +1,6 @@
-<!--- Generated at 2017-03-16T10:20:26.085.  Don't edit --->
+<!--- Generated at 2017-03-16T10:22:46.916.  Don't edit --->
 
 # APIGenerator API
-
-## APIGenerator 
- No documentation found.
-
-Displaying the `README.md` for the module instead.
-
----
 
 # APIGenerator
 
@@ -30,7 +23,8 @@ APIGenerator.make_api("MyPackage", "path/to/dest.md")
 import APIGenerator
 APIGenerator.make_api("APIGenerator", Pkg.dir("APIGenerator", "docs", "api.md"))
 ```
- 
+
+See [docs/api.md](docs/api.md) to see the generated file
 ## make_api 
  ```
 make_api(pkg, dest; title = "$pkg API", readme=false, clobber=true)

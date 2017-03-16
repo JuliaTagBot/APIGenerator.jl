@@ -26,7 +26,7 @@ function make_api(pkg::String, dest::String; title="$pkg API", readme=false, clo
         info("Writing $pkg README")
         write(file, Markdown.plain(Markdown.readme(@eval(Main.$Pkg))))
     end
-    nms = setdiff(nms, [:OnlineStats])
+    nms = setdiff(nms, [Pkg])
     for nm in nms
         @eval obj = Main.$Pkg.$nm
         d = Docs.doc(obj)
