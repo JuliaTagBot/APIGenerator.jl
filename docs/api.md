@@ -1,4 +1,4 @@
-<!--- Generated at 2017-03-16T10:22:46.916.  Don't edit --->
+<!--- Generated at 2017-03-16T10:24:48.725.  Don't edit --->
 
 # APIGenerator API
 
@@ -21,10 +21,10 @@ APIGenerator.make_api("MyPackage", "path/to/dest.md")
 
 ```julia
 import APIGenerator
-APIGenerator.make_api("APIGenerator", Pkg.dir("APIGenerator", "docs", "api.md"))
+APIGenerator.make_api("APIGenerator", Pkg.dir("APIGenerator", "docs", "api.md"), readme=true)
 ```
 
-See [docs/api.md](docs/api.md) to see the generated file
+See [docs/api.md](docs/api.md) to see the generated file.  It starts with this readme and then includes the docstring of the single exported item from APIGenerator, `make_api`.
 ## make_api 
  ```
 make_api(pkg, dest; title = "$pkg API", readme=false, clobber=true)
