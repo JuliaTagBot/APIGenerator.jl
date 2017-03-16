@@ -32,7 +32,7 @@ function make_api(pkg::String, dest::String; title="$pkg API", readme=true, clob
     info("The following items are included in the output file:\n")
     if readme
         info("Writing $pkg README")
-        write(file, Markdown.plain(Markdown.readme(@eval(Main.$Pkg))))
+        write(file, Markdown.plain(Markdown.readme(@eval(Main.$Pkg))) * "\n")
     end
     for nm in nms
         @eval obj = Main.$Pkg.$nm
