@@ -1,14 +1,12 @@
-<!--- Generated at 2017-03-16T10:24:48.725.  Don't edit --->
+<!--- Generated at 2017-03-16T10:34:01.621.  Don't edit --->
 
 # APIGenerator API
 
+- [APIGenerator](#APIGenerator)
+- [make_api](#make_api)
 # APIGenerator
 
 [![Build Status](https://travis-ci.org/joshday/APIGenerator.jl.svg?branch=master)](https://travis-ci.org/joshday/APIGenerator.jl)
-
-[![Coverage Status](https://coveralls.io/repos/joshday/APIGenerator.jl/badge.svg?branch=master&service=github)](https://coveralls.io/github/joshday/APIGenerator.jl?branch=master)
-
-[![codecov.io](http://codecov.io/github/joshday/APIGenerator.jl/coverage.svg?branch=master)](http://codecov.io/github/joshday/APIGenerator.jl?branch=master)
 
 # Usage
 

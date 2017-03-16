@@ -10,7 +10,8 @@ Write a markdown file (`dest`) which includes the docstring of every exported na
 - `clobber = true` will overwrite `dest`
 - `readme = true` will include the `pkg`'s readme as the first item
 """
-function make_api(pkg::String, dest::String; title="$pkg API", readme=false, clobber=true)
+function make_api(pkg::String, dest::String; title="$pkg API", readme=false, clobber=true,
+                  toc=true)
     if dest[end-2:end] != ".md"
         dest *= ".md"
     end
@@ -20,13 +21,18 @@ function make_api(pkg::String, dest::String; title="$pkg API", readme=false, clo
     file = open(dest, "r+")
     write(file, "<!--- Generated at " * string(now()) * ".  Don't edit --->\n\n")
     write(file, "# $title\n\n")
+    nms = setdiff(names(@eval(Main.$Pkg)), [Pkg])
+    if toc
+        readme && write(file, "- [$Pkg](#$Pkg)\n")
+        for nm in nms
+            write(file, "- [$nm](#$nm)\n")
+        end
+    end
     info("The following items are included in the output file:\n")
-    nms = names(@eval(Main.$Pkg))
     if readme
         info("Writing $pkg README")
         write(file, Markdown.plain(Markdown.readme(@eval(Main.$Pkg))))
     end
-    nms = setdiff(nms, [Pkg])
     for nm in nms
         @eval obj = Main.$Pkg.$nm
         d = Docs.doc(obj)
