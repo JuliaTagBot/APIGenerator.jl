@@ -24,10 +24,12 @@ function make_api(pkg::String, dest::String; title="$pkg API", readme=true, clob
     write(file, "# $title\n\n")
     nms = setdiff(names(@eval(Main.$Pkg)), [Pkg])
     if toc
+        write(file, "# Contents\n")
         readme && write(file, "- [$Pkg](#$Pkg)\n")
         for nm in nms
-            write(file, "- [$nm](#$nm)\n")
+            write(file, "- [$nm](#$(lowercase(string(nm))))\n")
         end
+        write(file, "---\n\n")
     end
     info("The following items are included in the output file:\n")
     if readme
@@ -39,6 +41,7 @@ function make_api(pkg::String, dest::String; title="$pkg API", readme=true, clob
         d = Docs.doc(obj)
         println("  > $nm")
         write(file, "## $(string(nm))\n$(Markdown.plain(d))\n")
+        toc && write(file, "[top](#contents)\n")
     end
     close(file)
 end
