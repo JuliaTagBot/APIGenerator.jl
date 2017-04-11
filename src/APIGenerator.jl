@@ -38,7 +38,7 @@ function make_api(pkg::String, dest::String; title="$pkg API", readme=true, clob
         @eval obj = Main.$Pkg.$nm
         d = Docs.doc(obj)
         println("  > $nm")
-        write(file, "## $(string(nm)) \n $(Markdown.plain(d)) \n")
+        write(file, "## $(string(nm)) \n$(Markdown.plain(d))\n")
     end
     close(file)
 end
