@@ -7,7 +7,7 @@
 
 ```julia
 import APIGenerator
-APIGenerator.make_api("APIGenerator", Pkg.dir("APIGenerator", "docs", "api.md"), readme=true)
+APIGenerator.make_api("APIGenerator", "api.md"; readme=true)
 ```
 
 See [docs/api.md](docs/api.md) to see the generated file.  
